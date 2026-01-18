@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-APP_SRC="../../Flask_/Pf2_Login_Page"
+APP_SRC="Flask_/Pf2_Login_Page"
 WORKDIR="tempdir_pf2"
 
 IMAGE_NAME="pf2app"
@@ -15,9 +15,9 @@ rm -rf $WORKDIR
 mkdir -p $WORKDIR
 
 # Kopieer app bestanden
-cp "$APP_SRC/flask_app.py" $WORKDIR/
-cp -r "$APP_SRC/templates" $WORKDIR/
-cp -r "$APP_SRC/static" $WORKDIR/
+cp "$APP_SRC/flask_app.py" tempdir_pf2/
+cp -r "$APP_SRC/templates" tempdir_pf2/
+cp -r "$APP_SRC/static" tempdir_pf2/
 
 # Maak Dockerfile (zoals lab maakt via script)
 cat > $WORKDIR/Dockerfile << 'EOF'
